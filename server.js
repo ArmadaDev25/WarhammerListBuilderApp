@@ -24,6 +24,9 @@ db.on('error', (err)=>console.log(err + 'error with mongo connection'))
 db.on('connected', ()=>console.log('mongo is connected'))
 db.on('disconnected', ()=>console.log('mongo is disconnected'))
 
+// Middleware
+app.use(express.urlencoded({extended: true}))
+
 // Server Listen
 app.listen(PORT, () =>{
     console.log(`App is listening on ${PORT}`)
