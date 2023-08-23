@@ -41,8 +41,20 @@ app.get('/', async (req, res)=>{
 
 // Route that shows the create page for the choosen faction
 app.get('/createlist/:id', (req, res) =>{
-    res.render('listCreate.ejs')
+    res.render('listCreate.ejs', {
+        currentArmy: [req.params.id]
+    })
 })
+
+
+// Route that posts to the database
+app.post('/createlist/:id', async (req,res) => {
+    let armyName = [req.params.id]
+    armyRulset = await armies.armyInfo.find({name: armyName})
+    res.send(armyRulset)
+
+})
+
 
 // Route that deletes the created list when the user hits back button
 
