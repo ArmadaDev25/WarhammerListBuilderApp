@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <% for (let x in armiesList) {%>
+        <h3>
+            <%=armiesList[x].name%>
+        </h3>
+        
+        <a href="/createlist/<%=armiesList[x].name%>">
+            Create Army List
+        </a>
+    <%}%>
+</body>
+</html>
