@@ -34,7 +34,6 @@ app.get('/', async (req, res)=>{
     res.render('index.ejs', {
         armiesList: listOfArmies
     })
-
 })
 
 // Route that shows the create page for the choosen faction
