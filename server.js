@@ -58,7 +58,14 @@ app.post('/createlist/:id', async (req,res) => {
         author: req.body.author,
         unitsInList: []
     })
-    res.send(newList) // DEBUG to make sure the app is pulling the correct army ruleset
+    console.log(newList) // DEBUG to make sure the app is pulling the correct army ruleset
+    res.redirect(`/list/${newList._id}`)
+
+})
+
+// Get page for the Edit army 
+app.get('/list/:listId', async (req,res) => {
+    res.send(await armies.playerArmyList.findById(req.params.id))
 
 })
 
