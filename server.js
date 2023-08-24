@@ -65,9 +65,8 @@ app.post('/createlist/:id', async (req,res) => {
 
 // Get page for the Edit army 
 app.get('/list/:listId', async (req,res) => {
-    let armyToGet = [req.params.listId]
     const displayedArmy = await armies.playerArmyList.findById(req.params.listId)
-    console.log(displayedArmy.listName)
+    console.log(displayedArmy.listName)// Debug to make sure the correcct army is being grabbed 
     res.render('listEdit.ejs', {
         armyToEdit: displayedArmy
     })
@@ -97,10 +96,10 @@ app.get('/seedArmy', async (req, res) => {
     console.log('Army Info Seeded')
 })
 app.get('/seedUnit', async (req,res)=>{
-    const army = await armies.armyInfo.findById('64e19a2cf40180c5b787ccac')
+    const army = await armies.armyInfo.findById('64e19f9466f23ccac9ba8362')
     console.log(army.name)
     army.avalibleUnits.push({
-        unitName: 'warrior'
+        unitName: 'Screamer Killer'
     })
     await army.save()
 })

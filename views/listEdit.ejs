@@ -1,8 +1,20 @@
 <%- include('./partials/headers') %>
 <h2>
     <%=armyToEdit.listName%>
-
 </h2>
+<h3>List Info</h3>
+<p>
+    Created by: <%=armyToEdit.author%> <br>
+    Faction: <%=armyToEdit.ArmyInfo[0].name%> 
+</p>
+<h3>Units</h3>
+<h4>Units Avalible</h4>
+<% for (let x in armyToEdit.ArmyInfo[0].avalibleUnits){%>
+<p>
+    <%=armyToEdit.ArmyInfo[0].avalibleUnits[x].unitName%>  
+</p>
+<%}%>
+
 
 </body>
 </html>
