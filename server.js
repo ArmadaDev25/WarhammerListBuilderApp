@@ -65,7 +65,10 @@ app.post('/createlist/:id', async (req,res) => {
 
 // Get page for the Edit army 
 app.get('/list/:listId', async (req,res) => {
-    res.send(await armies.playerArmyList.findById(req.params.id))
+    let displayedArmy = await armies.playerArmyList.findById(req.params.id)
+    res.render('listEdit.ejs', {
+        armyToEdit: displayedArmy
+    })
 
 })
 
