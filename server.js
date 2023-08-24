@@ -32,6 +32,7 @@ app.listen(PORT, () =>{
     console.log(`App is listening on ${PORT}`)
 })
 
+// Home Route
 app.get('/', async (req, res)=>{
     const listOfArmies = await armies.armyInfo.find({})
     res.render('index.ejs', {
@@ -51,7 +52,13 @@ app.get('/createlist/:id', (req, res) =>{
 app.post('/createlist/:id', async (req,res) => {
     let armyName = [req.params.id]
     armyRulset = await armies.armyInfo.find({name: armyName})
-    res.send(armyRulset)
+    const newList = await armies.playerArmyList.create({
+        ArmyInfo: armyRulset,
+        listName: req.body.listName,
+        author: req.body.author,
+        unitsInList: []
+    })
+    res.send(newList) // DEBUG to make sure the app is pulling the correct army ruleset
 
 })
 
