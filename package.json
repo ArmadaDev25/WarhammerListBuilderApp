@@ -3,6 +3,7 @@
     "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "method-override": "^3.0.0",
     "mongoose": "^7.4.3"
   },
   "scripts": {
@@ -12,7 +13,6 @@
   "description": "Warhammermuster.com is an online Warhammer 40k army list builder.",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ArmadaDev25/WarhammerMusterSite.git"

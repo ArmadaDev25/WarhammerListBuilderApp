@@ -11,9 +11,19 @@
 <h4>Units Avalible</h4>
 <% for (let x in armyToEdit.ArmyInfo[0].avalibleUnits){%>
 <p>
-    <%=armyToEdit.ArmyInfo[0].avalibleUnits[x].unitName%>  
+    <%=armyToEdit.ArmyInfo[0].avalibleUnits[x].unitName%>
+    <form action="/editlist/<%=armyToEdit._id%>?_method=PUT" method="POST">
+        
+        <input type="submit"  value="<%=armyToEdit.ArmyInfo[0].avalibleUnits[x].unitName%>" name="thisUnitName" >
+    </form>  
 </p>
+
+
 <%}%>
+<form action="/editlist/<%=armyToEdit._id%>?_method=PUT" method="POST">
+    UnitToPush: <input type="text" value="Warrior" name="thisUnitName">
+    <input type="submit"  value="Add Unit">
+</form>
 
 
 </body>

@@ -38,6 +38,5 @@ const playerArmyList = mongoose.model('playerArmyList', playerArmyListSchema)
 
 module.exports = {
     armyInfo,
-    Units,
     playerArmyList
 }

@@ -25,7 +25,9 @@ db.on('connected', ()=>console.log('mongo is connected'))
 db.on('disconnected', ()=>console.log('mongo is disconnected'))
 
 // Middleware
+const methodOverride = require('method-override')
 app.use(express.urlencoded({extended: true}))
+app.use(methodOverride('_method'))
 
 // Server Listen
 app.listen(PORT, () =>{
@@ -59,12 +61,12 @@ app.post('/createlist/:id', async (req,res) => {
         unitsInList: []
     })
     //console.log(newList) // DEBUG to make sure the app is pulling the correct army ruleset
-    res.redirect(`/list/${newList._id}`)
+    res.redirect(`/editlist/${newList._id}`)
 
 })
 
 // Get page for the Edit army 
-app.get('/list/:listId', async (req,res) => {
+app.get('/editlist/:listId', async (req,res) => {
     const displayedArmy = await armies.playerArmyList.findById(req.params.listId)
     console.log(displayedArmy.listName)// Debug to make sure the correcct army is being grabbed 
     res.render('listEdit.ejs', {
@@ -76,7 +78,22 @@ app.get('/list/:listId', async (req,res) => {
 
 // Route that deletes the created list when the user hits back button
 
+// Update Route
+app.put ('/editlist/:listId', async (req, res) => {
+    //console.log(req.params.listId)
+    //const unitToFind = await armies.armyInfo.find({unitName: req.body.thisUnitName})
+    const unitToLookFor = req.body.thisUnitName
+    const listToLookIn = await armies.playerArmyList.findById(req.params.listId)
+    const unitArray = listToLookIn.ArmyInfo[0].avalibleUnits
+    const unitObjectLocation = unitArray.findIndex(x => x.unitName === unitToLookFor)
+    console.log(unitArray)
+    console.log(unitToLookFor)
+    console.log(unitObjectLocation)
+    //console.log(listToLookIn.ArmyInfo[0].avalibleUnits)
+    //console.log(listToLookIn)
+    //console.log(unitToAdd)
 
+})
 
 
 
