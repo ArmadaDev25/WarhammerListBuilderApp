@@ -3,7 +3,7 @@
     <section id="fl">
     <% for (let x in armiesList) {%>
         <article id="armyContainer">
-            <img src="<%=armiesList[x].armyLogo%>" width="70" height="50">
+            <img id="aLogo" src="<%=armiesList[x].armyLogo%>" width="70" height="50">
             <h3>
                 <%=armiesList[x].name%>
             </h3>
@@ -14,7 +14,7 @@
         </article>
     <%}%>
     </section>
-    <h2>
+    <h2 id="indexsh">
         Created Lists
     </h2>
     <% for (let x in playerList) {%>

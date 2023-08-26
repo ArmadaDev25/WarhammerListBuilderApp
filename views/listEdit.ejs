@@ -1,4 +1,5 @@
 <%- include('./partials/header') %>
+<section id="mainbody">
 <h2>
     <%=armyToEdit.listName%>
 </h2>
@@ -15,20 +16,24 @@
     Faction: <%=armyToEdit.ArmyInfo[0].name%> 
 </p>
 <h3>Units</h3>
+<section id="unitsedit">
+<article id="uess">
 <h4>Units Avalible</h4>
 <% for (let x in armyToEdit.ArmyInfo[0].avalibleUnits){%>
 <p>
-    <%=armyToEdit.ArmyInfo[0].avalibleUnits[x].unitName%>
+
     <form action="/editlist/<%=armyToEdit._id%>?_method=PUT" method="POST">
         
         <input type="submit"  value="<%=armyToEdit.ArmyInfo[0].avalibleUnits[x].unitName%>" name="thisUnitName" >
     </form>  
 </p>
 <%}%>
+</article>
+<article id="uess">
+<h4>
+    Units in List
+</h4>
 
-<h3>
-    Units
-</h3>
 <% for (let x in armyToEdit.unitsInList) {%>
 <p>
     <%=armyToEdit.unitsInList[x].unitName%>
@@ -36,3 +41,6 @@
 <%}%>
 
 <%- include('./partials/footer') %>
+</article>
+</section>
+</section>

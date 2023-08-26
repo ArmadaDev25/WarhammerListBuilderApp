@@ -1,6 +1,6 @@
 <%- include('./partials/header') %>
 
-
+<section id="mainbody">
 <img src="<%=currentList.ArmyInfo[0].armyLogo%>" width="70" height="50">
 <h2>
     <%=currentList.listName%>
@@ -21,7 +21,7 @@
     <%=currentList.unitsInList[x].unitName%>
 </p>
 <%}%>
-
+</section>
 
 
 <%- include('./partials/footer') %>
