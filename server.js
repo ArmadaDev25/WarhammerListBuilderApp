@@ -86,13 +86,18 @@ app.put ('/editlist/:listId', async (req, res) => {
     const listToLookIn = await armies.playerArmyList.findById(req.params.listId)
     const unitArray = listToLookIn.ArmyInfo[0].avalibleUnits
     const unitObjectLocation = unitArray.findIndex(x => x.unitName === unitToLookFor)
-    console.log(unitArray)
-    console.log(unitToLookFor)
-    console.log(unitObjectLocation)
-    //console.log(listToLookIn.ArmyInfo[0].avalibleUnits)
+    const arrayToPush = listToLookIn.unitsInList
+    arrayToPush.push(listToLookIn.ArmyInfo[0].avalibleUnits[unitObjectLocation])
+    //console.log(unitArray)
+    //console.log(unitToLookFor)
+    //console.log(unitObjectLocation)
+    //console.log(listToLookIn.unitsInList.length)
+    //console.log(arrayToPush)
+    const updatedList = await armies.playerArmyList.findByIdAndUpdate(req.params.listId, {unitsInList: arrayToPush})
+    console.log(updatedList)
+    
     //console.log(listToLookIn)
     //console.log(unitToAdd)
-
 })
 
 
