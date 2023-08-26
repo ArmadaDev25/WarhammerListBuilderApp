@@ -1,7 +1,18 @@
 <%- include('./partials/header') %>
 
+
+<img src="<%=currentList.ArmyInfo[0].armyLogo%>" width="70" height="50">
 <h2>
     <%=currentList.listName%>
 </h2>
+<h3>
+    Army Info
+</h3>
+<p>
+    Faction: <%=currentList.ArmyInfo[0].name%> <br>
+    Created By: <%=currentList.author%>
+</p>
+
+
 
 <%- include('./partials/footer') %>
