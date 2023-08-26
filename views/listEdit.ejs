@@ -26,6 +26,13 @@
 </p>
 <%}%>
 
-
+<h3>
+    Units
+</h3>
+<% for (let x in armyToEdit.unitsInList) {%>
+<p>
+    <%=armyToEdit.unitsInList[x].unitName%>
+</p>
+<%}%>
 
 <%- include('./partials/footer') %>

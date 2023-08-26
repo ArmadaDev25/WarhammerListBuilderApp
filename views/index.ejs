@@ -1,14 +1,19 @@
 <%- include('./partials/header') %>
 
+    <section id="fl">
     <% for (let x in armiesList) {%>
-        <h3>
-            <%=armiesList[x].name%>
-        </h3>
+        <article id="armyContainer">
+            <img src="<%=armiesList[x].armyLogo%>" width="70" height="50">
+            <h3>
+                <%=armiesList[x].name%>
+            </h3>
         
-        <a href="/createlist/<%=armiesList[x].name%>">
-            Create Army List
-        </a>
+            <a href="/createlist/<%=armiesList[x].name%>">
+                Create Army List
+            </a>
+        </article>
     <%}%>
+    </section>
     <h2>
         Created Lists
     </h2>

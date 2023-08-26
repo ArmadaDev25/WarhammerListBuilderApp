@@ -106,6 +106,7 @@ app.put ('/editlist/:listId', async (req, res) => {
     //console.log(arrayToPush)
     const updatedList = await armies.playerArmyList.findByIdAndUpdate(req.params.listId, {unitsInList: arrayToPush})
     console.log(updatedList)
+    res.redirect(`/editlist/${req.params.listId}`)
     
     //console.log(listToLookIn)
     //console.log(unitToAdd)
