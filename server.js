@@ -51,6 +51,13 @@ app.get('/createlist/:id', (req, res) =>{
     })
 })
 
+// route that displays a selected list
+app.get('/list/:listId', (req, res) => {
+    res.render('showlist.ejs', {
+        currentList: [req.params.listId] 
+    } )
+})
+
 
 // Route that posts to the database
 app.post('/createlist/:id', async (req,res) => {
