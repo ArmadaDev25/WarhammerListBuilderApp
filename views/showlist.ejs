@@ -5,6 +5,9 @@
 <h2>
     <%=currentList.listName%>
 </h2>
+
+<section id="liinfo">
+<section class="iPanel">
 <h3>
     Army Info
 </h3>
@@ -13,12 +16,6 @@
     Created By: <%=currentList.author%>
 </p>
 <h3>
-    Army Rule
-</h3>
-<img src="<%=currentList.ArmyInfo[0].armyRule%>">
-
-
-<h3>
     Units
 </h3>
 <% for (let x in currentList.unitsInList) {%>
@@ -26,6 +23,15 @@
     <%=currentList.unitsInList[x].unitName%>
 </p>
 <%}%>
+</section>
+
+<section class="iPanel" >
+<h3>
+    Army Rule
+</h3>
+<img src="<%=currentList.ArmyInfo[0].armyRule%>">
+</section>
+</section>
 </section>
 
 
