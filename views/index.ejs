@@ -1,6 +1,15 @@
 <%- include('./partials/header') %>
 
+    <h2 id="indexsh">
+        What is Warhammer
+    </h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/X98ImCbhjnI?si=LGfis-akt84nexW-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    
+    <h2 id="indexsh">
+        Factions
+    </h2>
     <section id="fl">
+    
     <% for (let x in armiesList) {%>
         <article id="armyContainer">
             <img id="aLogo" src="<%=armiesList[x].armyLogo%>" width="70" height="50">
