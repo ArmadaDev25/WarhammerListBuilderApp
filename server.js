@@ -76,7 +76,7 @@ app.get('/editlist/:listId', async (req,res) => {
 })
 
 
-// Route that deletes the created list when the user hits back button
+
 
 // Update Route
 app.put ('/editlist/:listId', async (req, res) => {
@@ -98,6 +98,11 @@ app.put ('/editlist/:listId', async (req, res) => {
     
     //console.log(listToLookIn)
     //console.log(unitToAdd)
+})
+
+// Route that deletes the created list when the user hits back button
+app.delete('editlist/:listId', async (req, res) => {
+    
 })
 
 
