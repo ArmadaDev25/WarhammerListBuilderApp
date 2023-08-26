@@ -37,8 +37,10 @@ app.listen(PORT, () =>{
 // Home Route
 app.get('/', async (req, res)=>{
     const listOfArmies = await armies.armyInfo.find({})
+    const playerLists = await armies.playerArmyList.find({})
     res.render('index.ejs', {
-        armiesList: listOfArmies
+        armiesList: listOfArmies,
+        playerList: playerLists
     })
 })
 
