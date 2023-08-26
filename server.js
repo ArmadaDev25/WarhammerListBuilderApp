@@ -140,7 +140,7 @@ app.get('/seedUnit', async (req,res)=>{
     const army = await armies.armyInfo.findById('64e19f9466f23ccac9ba8362')
     console.log(army.name)
     army.avalibleUnits.push({
-        unitName: 'Screamer Killer'
+        unitName: 'Tyrannofex'
     })
     await army.save()
 })
