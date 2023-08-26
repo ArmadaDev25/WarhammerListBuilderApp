@@ -14,9 +14,11 @@
     </h2>
     <% for (let x in playerList) {%>
         
-        <h3>
+        <a href="/list/<%=playerList[x]._id%>">
+        
             <%=playerList[x].listName%>
-        </h3>
+        
+        </a>
         
     <%}%>
 

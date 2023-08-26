@@ -52,10 +52,12 @@ app.get('/createlist/:id', (req, res) =>{
 })
 
 // route that displays a selected list
-app.get('/list/:listId', (req, res) => {
+app.get('/list/:listId', async (req, res) => {
+    const listToDisplay = await armies.playerArmyList.findById(req.params.listId)
     res.render('showlist.ejs', {
-        currentList: [req.params.listId] 
+        currentList: listToDisplay 
     } )
+    
 })
 
 
