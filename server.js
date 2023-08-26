@@ -68,7 +68,7 @@ app.post('/createlist/:id', async (req,res) => {
 // Get page for the Edit army 
 app.get('/editlist/:listId', async (req,res) => {
     const displayedArmy = await armies.playerArmyList.findById(req.params.listId)
-    console.log(displayedArmy.listName)// Debug to make sure the correcct army is being grabbed 
+    //console.log(displayedArmy.listName)// Debug to make sure the correcct army is being grabbed 
     res.render('listEdit.ejs', {
         armyToEdit: displayedArmy
     })
@@ -101,8 +101,10 @@ app.put ('/editlist/:listId', async (req, res) => {
 })
 
 // Route that deletes the created list when the user hits back button
-app.delete('editlist/:listId', async (req, res) => {
-    
+app.delete('/editlist/:listId', async (req, res) => {
+    const army = await armies.playerArmyList.findByIdAndDelete(req.params.listId)
+    res.redirect('/')
+
 })
 
 
