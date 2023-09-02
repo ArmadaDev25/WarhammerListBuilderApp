@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const comment = require('./commentSchema')
 
 // Tyranid UnitsSchema
 const UnitsSchema = new mongoose.Schema({
@@ -27,7 +28,8 @@ const playerArmyListSchema = new mongoose.Schema({
     ArmyInfo: [armyInfoSchema],// should be passed into the list after clicking create
     listName: {type: String},
     author: {type: String},
-    unitsInList:{type: Array}
+    unitsInList:{type: Array},
+    comments:[comment]
 }) 
 
 
