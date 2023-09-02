@@ -33,6 +33,10 @@
 </section>
 </section>
 </section>
-
+<form action="/list/<%=currentList%>/comment" method="POST">
+    Author: <input required type="text" name="author">
+    Comment: <textarea required name="comment"></textarea>
+    <input type="submit" value="Add Comment">
+</form>
 
 <%- include('./partials/footer') %>
