@@ -4,7 +4,7 @@ require('dotenv').config()
 // Express Requires
 const express = require('express')
 const app = express()
-const PORT = process.env.port
+const PORT = process.env.PORT
 
 // Requires for Seed data
 const armies = require('./models/armySchemas') // Army Rules Schema
