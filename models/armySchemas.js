@@ -16,8 +16,8 @@ const UnitsSchema = new mongoose.Schema({
 // Army Info
 const armyInfoSchema = new mongoose.Schema({
     name: { type: String, required: true},
-    armyRule: { type: String, required: true},
-    armyLogo: { type: String, required: true}, 
+    //armyRule: { type: String, required: true},
+    //armyLogo: { type: String, required: true}, 
     armyRuleText: {type: String, required: true},
     avalibleUnits: [UnitsSchema]// each army info schema should have its own different untis that it can recruit
 })
